@@ -1,8 +1,10 @@
-const multipleEntry = require('react-app-rewire-multiple-entry')([{
-  entry: 'src/admin-app.js',
-  template: 'public/index.html',
-  outPath: '/admin.html'
-}]);
+const multipleEntry = require('react-app-rewire-multiple-entry')([
+  {
+    entry: 'src/admin-app.jsx',
+    template: 'public/index.html',
+    outPath: '/admin.html',
+  },
+]);
 
 module.exports = {
   webpack(config) {
@@ -18,5 +20,5 @@ module.exports = {
       ];
       return config;
     };
-  }
-}
+  },
+};
