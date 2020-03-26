@@ -32,8 +32,14 @@ const MapScreen = () => {
   const handleMarkerClick = e => {
     const { latlng } = e;
 
-    if (latlng) {
+    if (latlng.lat && latlng.lng) {
+      setHasLocation(true);
       setPosition(latlng);
+
+      const map = mapRef.current;
+      if (map != null) {
+        map.leafletElement.locate();
+      }
     }
   };
 
