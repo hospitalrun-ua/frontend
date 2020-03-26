@@ -11,9 +11,7 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <HospitalList hospitals={hospitals} />
-    </div>
+    <HospitalList hospitals={hospitals} />
   );
 }
 

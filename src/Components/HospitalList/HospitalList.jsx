@@ -1,14 +1,16 @@
 import React from 'react';
+import { Box } from '@material-ui/core';
 import MaterialTable from 'material-table';
+import i18n from '../../i18n';
 import TableIcons from './TableIcons';
 import './HospitalList.css';
 
 const columnConfig = [
-  { title: 'Назва', field: 'division_name' },
-  { title: 'Область', field: 'division_area', filtering: true },
-  { title: 'Район', field: 'division_region' },
-  { title: 'Населений пункт', field: 'division_settlement' },
-  { title: 'Кількість запитів', field: 'requests.length' },
+  { title: i18n.hospitalTable.nameCol, field: 'division_name' },
+  { title: i18n.hospitalTable.areaCol, field: 'division_area', filtering: true },
+  { title: i18n.hospitalTable.regionCol, field: 'division_region' },
+  { title: i18n.hospitalTable.settlementCol, field: 'division_settlement' },
+  { title: i18n.hospitalTable.requestsCol, field: 'requests.length' },
 ];
 
 const tableOptions = {
@@ -17,11 +19,11 @@ const tableOptions = {
   pageSizeOptions: [25, 50, 75, 100],
 };
 
-function HospitalDetail({ hospital }) {
-  const { requests } = hospital;
+const HospitalDetail = ({ hospital }) => {
+  const { requests = [] } = hospital;
   return (
     <>
-      {requests && requests.map((request) => (
+      {requests.map((request) => (
         <div className="row" key={request.description_ua}>
           <div>{request.description_ua}</div>
           <div>{request.quantity}</div>
@@ -29,11 +31,11 @@ function HospitalDetail({ hospital }) {
       ))}
     </>
   );
-}
+};
 
 export default function HospitalList({ hospitals }) {
   return (
-    <div style={{ maxWidth: '100%' }}>
+    <Box maxWidth={1}>
       <MaterialTable
         icons={TableIcons}
         columns={columnConfig}
@@ -42,6 +44,6 @@ export default function HospitalList({ hospitals }) {
         title="Моніторинг запитів"
         detailPanel={(hospital) => (<HospitalDetail hospital={hospital} />)}
       />
-    </div>
+    </Box>
   );
 }
