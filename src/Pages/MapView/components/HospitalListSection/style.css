@@ -1,0 +1,10 @@
+.hospital-list {
+  position: absolute;
+  top: 10%;
+  width: 400px;
+  min-height: 400px;
+  background: white;
+  right: 10px;
+  z-index: 1000;
+  height: 80%;
+}
