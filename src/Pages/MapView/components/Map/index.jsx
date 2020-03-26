@@ -1,19 +1,19 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef } from 'react';
 // import L from "leaflet";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
-import "./style.css";
+import './style.css';
 
 const initialPosition = {
   lat: 50.45372,
-  lng: 30.503
+  lng: 30.503,
 };
 
 const markers = [
   {
     id: 1,
-    position: initialPosition
-  }
+    position: initialPosition,
+  },
 ];
 
 const zoom = 17;
@@ -29,7 +29,7 @@ const MapScreen = () => {
   const [hasLocation, setHasLocation] = useState(false);
   const mapRef = useRef();
 
-  const handleMarkerClick = e => {
+  const handleMarkerClick = (e) => {
     const { latlng } = e;
 
     if (latlng.lat && latlng.lng) {
@@ -43,7 +43,7 @@ const MapScreen = () => {
     }
   };
 
-  const handleLocationFound = e => {
+  const handleLocationFound = (e) => {
     const { latlng } = e;
     if (latlng.lat && latlng.lng) {
       setHasLocation(true);
@@ -77,7 +77,7 @@ const MapScreen = () => {
       />
 
       {markers.length > 0 &&
-        markers.map(m => (
+        markers.map((m) => (
           <Marker
             key={m.id}
             position={m.position}
