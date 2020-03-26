@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
+
+import MapView from "./MapView/index.jsx";
 
 function App() {
-  return (
-    <h1>Hello, App</h1>
-  );
+  return <MapView />;
 }
 
 export default App;
