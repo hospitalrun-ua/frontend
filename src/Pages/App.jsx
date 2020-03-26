@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     fetchHospitalInfo()
-      .then((info) => setHospitals(info));
+      .then(setHospitals);
   }, []);
 
   return (
