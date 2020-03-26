@@ -1,0 +1,13 @@
+.row {
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+.row:nth-child(even) {
+    background-color: #fff;
+}

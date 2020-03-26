@@ -4,9 +4,12 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.7",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "material-table": "^1.57.2",
+    "papaparse": "^5.1.1",
     "react": "^16.13.1",
     "react-app-rewire-multiple-entry": "^2.1.0",
     "react-app-rewired": "^2.1.5",
