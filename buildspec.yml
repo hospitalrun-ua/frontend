@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+        nodejs: 10
+    commands:
+    - echo Installing node packs...
+    - npm install
+  pre_build:
+    commands:
+    - echo pre_build completed on `date`
+  build:
+    commands:
+    - echo Build started on the `date`
+    - echo Compiling the Node.js code
+    - npm run build
+post_build:
+  commands:
+  - echo Build completed on `date`
+artifacts:
+  files:
+  - '**/*'
+  base-directory: build 
