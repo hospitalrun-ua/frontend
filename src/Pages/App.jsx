@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import HospitalList from '../Components/HospitalList/HospitalList';
+import fetchHospitalInfo from '../API/Hospitals';
 
 function App() {
+  const [hospitals, setHospitals] = useState([]);
+
+  useEffect(() => {
+    fetchHospitalInfo()
+      .then(setHospitals);
+  }, []);
+
   return (
-    <h1>Hello, App</h1>
+    <HospitalList hospitals={hospitals} />
   );
 }
 
