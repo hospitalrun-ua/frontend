@@ -6,6 +6,8 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'prettier',
+    'prettier/recommended',
   ],
   globals: {
     Atomics: 'readonly',
@@ -18,10 +20,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
-  rules: {
-  },
-  parser: 'babel-eslint'
+  plugins: ['react', 'prettier'],
+  rules: {},
+  parser: 'babel-eslint',
 };

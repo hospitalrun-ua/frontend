@@ -1,15 +1,20 @@
-import React from "react";
+import React from 'react';
+import { Card, CardContent, Box } from '@material-ui/core';
 
-import Filters from "./components/Filters";
-import HospitalList from "./components/HospitalList";
-import "./style.css";
+import Filters from './components/Filters';
+import HospitalList from './components/HospitalList';
+import './style.css';
 
-const HospitalListSection = () => {
+const HospitalListSection = ({ hospitals }) => {
   return (
-    <div className="hospital-list">
-      <Filters />
-      <HospitalList />
-    </div>
+    <Card className="hospital-list" elevation={3}>
+      <CardContent className="hospital-list-card-content">
+        <Box display="flex" flexDirection="column" height="100%">
+          <Filters />
+          <HospitalList hospitals={hospitals} />
+        </Box>
+      </CardContent>
+    </Card>
   );
 };
 

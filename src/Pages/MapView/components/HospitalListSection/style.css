@@ -2,9 +2,13 @@
   position: absolute;
   top: 10%;
   width: 400px;
-  min-height: 400px;
-  background: white;
-  right: 10px;
+  min-height: 200px;
+  right: 24px;
   z-index: 1000;
   height: 80%;
+}
+
+.hospital-list-card-content {
+  height: 100%;
+  padding: 0 !important;
 }
