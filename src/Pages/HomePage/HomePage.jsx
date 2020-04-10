@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Container } from '@material-ui/core';
 import HospitalList from '../../Components/HospitalList/HospitalList';
-import fetchHospitalInfo from '../../API/Hospitals';
 import Header from '../../Components/Header/Header';
+import { VolunteerJoin } from '../../Components/Modal';
 
 const HomePage = () => {
-  const [hospitals, setHospitals] = useState([]);
+  const [showAppModal, handleAppModal] = useState(false);
 
-  useEffect(() => {
-    fetchHospitalInfo()
-      .then(setHospitals);
-  }, []);
+  const toggleModal = () => {
+    handleAppModal(!showAppModal)
+  }
 
   return (
     <div>
-      <Header />
+      <Header toggleModal={toggleModal} />
       <Container>
-        <HospitalList hospitals={hospitals} />
+        <HospitalList />
       </Container>
+      <VolunteerJoin open={showAppModal} onClose={toggleModal} />
     </div>
   );
 }
