@@ -10,7 +10,8 @@ import Login from '../Login/Login';
 const { searchPlaceholder } = i18n.header;
 
 const Header = ({ ...props }) => {
-  const { isAuthenticated = false } = props;
+  const { isAuthenticated = false, toggleModal } = props;
+
   return (
     <div className="headerWrap">
       <Container>
@@ -22,7 +23,7 @@ const Header = ({ ...props }) => {
           {!isAuthenticated &&
             <Fragment>
               <CityChoice />
-              <JoinDropdown />
+              <JoinDropdown toggleModal={toggleModal}/>
               <Login />
             </Fragment>
           }
