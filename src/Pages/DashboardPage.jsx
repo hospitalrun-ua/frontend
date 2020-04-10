@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Typography, Table, TableHead, TableRow, TableCell, Paper,
   Input, Box, FormControl, InputLabel, TableBody, Button, Icon, IconButton,
@@ -26,10 +26,11 @@ const DashboardPage = () => {
   const [facilities, setFacilites] = useState([]);
   const [contacts, setContacts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [amount, setAmount] = useState(0);
   const selectedFacility = facilities.find((x) => x.name === selectedFacilityId);
   const selectedContact = contacts.find((x) => x.name === selectedContactId);
 
-  useEffect(() => {
+  const getData = () => {
     fetch('http://localhost:3001/api/resources')
       .then((x) => x.json())
       .then((x) => {
@@ -46,7 +47,31 @@ const DashboardPage = () => {
           .reduce((res, next) => res.set(next.name, next.name), new Map());
         setCategories([...categoriesX.values()]);
       });
-  }, [setRequests]);
+  };
+  const init = useRef(false);
+  useEffect(() => {
+    console.log(init);
+    if (!init.current) {
+      getData();
+      init.current = true;
+    }
+  }, [init]);
+
+  const submit = () => {
+    const req = {
+      beneficiary: selectedFacility,
+      contactPerson: selectedContact,
+      items: [{
+        name: selectedCategory,
+        quantity: parseInt(amount, 10),
+      }],
+    };
+
+    fetch('http://localhost:3001/api/resources', {
+      method: 'POST',
+      body: JSON.stringify(req),
+    }).then((() => getData()));
+  };
 
   return (
     <>
@@ -179,7 +204,7 @@ const DashboardPage = () => {
           <Box mb={2}>
             <FormControl fullWidth>
               <InputLabel>Amount</InputLabel>
-              <Input />
+              <Input value={amount} onChange={(({ target: { value } }) => setAmount(value))} />
             </FormControl>
           </Box>
           <Box mb={2}>
@@ -191,10 +216,21 @@ const DashboardPage = () => {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button color="secondary" onClick={() => setModalOpen(false)}>
+          <Button
+            color="secondary"
+            onClick={() => {
+              setModalOpen(false);
+            }}
+          >
             Cancel
           </Button>
-          <Button color="primary" onClick={() => setModalOpen(false)}>
+          <Button
+            color="primary"
+            onClick={() => {
+              submit();
+              setModalOpen(false);
+            }}
+          >
             Create
           </Button>
         </DialogActions>
