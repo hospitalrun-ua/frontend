@@ -1,7 +1,10 @@
 import React from 'react';
 import {
-  Drawer, Box, AppBar, Toolbar, makeStyles, CssBaseline, createMuiTheme, ThemeProvider,
+  Drawer, Box, AppBar, Toolbar, makeStyles, CssBaseline, createMuiTheme, ThemeProvider, Container,
 } from '@material-ui/core';
+import { Switch, Route } from 'react-router';
+import AdminNavigation from '../Components/HospitalList/AdminNavigation';
+import DashboardPage from './DashboardPage';
 
 
 const customTheme = createMuiTheme({
@@ -39,13 +42,21 @@ const AdminApp = () => {
           classes={{ paper: classes.drawer }}
           PaperProps={{ elevation: 4 }}
         >
-          <Box className={classes.logo}>Logo</Box>
+          <Box className={classes.logo} />
+          <AdminNavigation />
         </Drawer>
         <Box width={1} className={classes.main}>
           <AppBar position="relative" elevation={2}>
             <Toolbar />
           </AppBar>
-          <Box className={classes.content} />
+          <Container className={classes.content}>
+            <Box mt={2}>
+              <Switch>
+                <Route path="/admin/dashboard" component={DashboardPage} />
+              </Switch>
+
+            </Box>
+          </Container>
         </Box>
       </Box>
     </ThemeProvider>
