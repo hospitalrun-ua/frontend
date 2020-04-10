@@ -1,0 +1,13 @@
+.joinDropdownTitle {
+    margin-left: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    color: #7A7D8C;
+    transition: 0.3s color;
+}
+
+.joinDropdownTitle:hover {
+    color: #1540A4;
+}

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Box } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import HospitalList from '../../Components/HospitalList/HospitalList';
 import fetchHospitalInfo from '../../API/Hospitals';
+import Header from '../../Components/Header/Header';
 
-function HomePage() {
+const HomePage = () => {
   const [hospitals, setHospitals] = useState([]);
 
   useEffect(() => {
@@ -12,9 +13,12 @@ function HomePage() {
   }, []);
 
   return (
-    <Box>
-      <HospitalList hospitals={hospitals} />
-    </Box>
+    <div>
+      <Header />
+      <Container>
+        <HospitalList hospitals={hospitals} />
+      </Container>
+    </div>
   );
 }
 

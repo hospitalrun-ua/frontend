@@ -1,0 +1,22 @@
+.loginButton {
+    background: #1540A4;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.75px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s all;
+}
+
+.loginButton:hover, .loginButton:focus {
+    outline: 0;
+}
