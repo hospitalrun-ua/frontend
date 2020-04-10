@@ -1,17 +1,10 @@
 import React from 'react';
 import {
-  Drawer, Box, AppBar, Toolbar, makeStyles, CssBaseline, createMuiTheme, ThemeProvider, Container,
+  Drawer, Box, AppBar, Toolbar, makeStyles, CssBaseline, Container
 } from '@material-ui/core';
 import { Switch, Route } from 'react-router';
 import AdminNavigation from '../Components/HospitalList/AdminNavigation';
 import DashboardPage from './DashboardPage';
-
-
-const customTheme = createMuiTheme({
-  palette: {
-    primary: { main: '#1540A4' },
-  },
-});
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -33,33 +26,31 @@ const useStyles = makeStyles((theme) => ({
 const AdminApp = () => {
   const classes = useStyles();
   return (
-    <ThemeProvider theme={customTheme}>
-      <Box display="flex" width={1} height="100%">
-        <CssBaseline />
-        <Drawer
-          open
-          variant="persistent"
-          classes={{ paper: classes.drawer }}
-          PaperProps={{ elevation: 4 }}
-        >
-          <Box className={classes.logo} />
-          <AdminNavigation />
-        </Drawer>
-        <Box width={1} className={classes.main}>
-          <AppBar position="relative" elevation={2}>
-            <Toolbar />
-          </AppBar>
-          <Container className={classes.content}>
-            <Box mt={2}>
-              <Switch>
-                <Route path="/admin/dashboard" component={DashboardPage} />
-              </Switch>
+    <Box display="flex" width={1} height="100%">
+      <CssBaseline />
+      <Drawer
+        open
+        variant="persistent"
+        classes={{ paper: classes.drawer }}
+        PaperProps={{ elevation: 4 }}
+      >
+        <Box className={classes.logo} />
+        <AdminNavigation />
+      </Drawer>
+      <Box width={1} className={classes.main}>
+        <AppBar position="relative" elevation={2}>
+          <Toolbar />
+        </AppBar>
+        <Container className={classes.content}>
+          <Box mt={2}>
+            <Switch>
+              <Route path="/admin/dashboard" component={DashboardPage} />
+            </Switch>
 
-            </Box>
-          </Container>
-        </Box>
+          </Box>
+        </Container>
       </Box>
-    </ThemeProvider>
+    </Box>
   );
 };
 

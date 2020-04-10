@@ -30,14 +30,11 @@ const menuItemsMock = [
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#1540A4', // #TODO: Use theme variable!
+    backgroundColor: theme.palette.primary['main'],
     padding: '4rem 0'
   },
-  container: {
-    maxWidth: '1110px', // #TODO: Use theme variable!
-  },
   subheading: {
-    color: '#B9C6E4', // #TODO: Use theme variable!
+    color: theme.palette.text['secondary'],
     fontWeight: 'bold',
     fontSize: '1rem',
     lineHeight: '170%'
@@ -46,20 +43,20 @@ const useStyles = makeStyles((theme) => ({
     padding: 0
   },
   content: {
-    color: '#B9C6E4', // #TODO: Use theme variable!
+    color: theme.palette.text['secondary'],
     fontSize: '1rem',
     lineHeight: '170%'
   },
   contact: {
     padding: '.5rem 0',
-    color: '#B9C6E4',
+    color: theme.palette.text['secondary'],
     lineHeight: '170%'
   },
   copyright: {
-    borderTop: '1px solid #B9C6E4', // #TODO: Use theme variable!
+    borderTop: `1px solid ${theme.palette.text['secondary']}`,
     marginTop: '3rem',
     padding: '2rem 0',
-    color: '#B9C6E4'
+    color: theme.palette.text['secondary']
   }
 }));
 
@@ -68,7 +65,7 @@ export default () => {
 
   return (
     <Box className={classes.root}>
-      <Container className={classes.container}>
+      <Container maxWidth='lg'>
         <Grid container spacing={3}>
           {
             menuItemsMock.map((section) => (
