@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Route, Switch,
+} from 'react-router-dom';
 import HomePage from './HomePage/HomePage';
 import AdminApp from './AdminApp';
 import '../index.css';
@@ -9,7 +11,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/admin" component={AdminApp} />
+        <Route path="/admin" component={AdminApp} />
       </Switch>
     </Router>
   );
