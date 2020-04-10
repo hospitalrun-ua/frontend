@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import HospitalList from '../Components/HospitalList/HospitalList';
-import fetchHospitalInfo from '../API/Hospitals';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import HomePage from './HomePage/HomePage';
+import AdminApp from './AdminApp';
 
 function App() {
-  const [hospitals, setHospitals] = useState([]);
-
-  useEffect(() => {
-    fetchHospitalInfo()
-      .then(setHospitals);
-  }, []);
-
   return (
-    <HospitalList hospitals={hospitals} />
+    <Router>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/admin" component={AdminApp} />
+      </Switch>
+    </Router>
   );
 }
 
