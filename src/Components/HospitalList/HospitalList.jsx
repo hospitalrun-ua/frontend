@@ -1,49 +1,74 @@
-import React from 'react';
-import { Box } from '@material-ui/core';
-import MaterialTable from 'material-table';
-import i18n from '../../i18n';
-import TableIcons from './TableIcons';
-import './HospitalList.css';
+import React, { useState, useEffect } from 'react';
+import {
+  Paper,
+  Table,
+  TableHead,
+  TableRow,
+  TableBody,
+  TableCell,
+  Button,
+} from '@material-ui/core';
 
-const columnConfig = [
-  { title: i18n.hospitalTable.nameCol, field: 'division_name' },
-  { title: i18n.hospitalTable.areaCol, field: 'division_area', filtering: true },
-  { title: i18n.hospitalTable.regionCol, field: 'division_region' },
-  { title: i18n.hospitalTable.settlementCol, field: 'division_settlement' },
-  { title: i18n.hospitalTable.requestsCol, field: 'requests.length' },
+const columns = [
+  { label: 'Facility', key: '' },
+  { label: 'Request', key: '' },
+  { label: 'Amount', key: '' },
+  { label: 'Deadline', key: '' },
+  { label: 'Contact person', key: '' },
+  { label: '', key: '' },
 ];
 
-const tableOptions = {
-  filtering: true,
-  pageSize: 25,
-  pageSizeOptions: [25, 50, 75, 100],
-};
+const HospitalList = () => {
+  const [hasError, setErrors] = useState(false); // @TODO: Handle the errors.
+  const [requests, setRequests] = useState([]);
+  const [isLoading, setIsLoading] = useState(false); // @TODO: Use it!
 
-const HospitalDetail = ({ hospital }) => {
-  const { requests = [] } = hospital;
-  return (
-    <>
-      {requests.map((request) => (
-        <div className="row" key={request.description_ua}>
-          <div>{request.description_ua}</div>
-          <div>{request.quantity}</div>
-        </div>
-      ))}
-    </>
-  );
-};
+  async function fetchData() {
+    const res = await fetch('http://localhost:3001/api/resources');
+    res
+      .json()
+      .then(res => setRequests(res.list))
+      .catch(err => setErrors(err));
+  }
 
-export default function HospitalList({ hospitals }) {
+  useEffect(() => {
+    setIsLoading(true);
+    fetchData();
+    setIsLoading(false);
+  }, []);
+
   return (
-    <Box maxWidth={1}>
-      <MaterialTable
-        icons={TableIcons}
-        columns={columnConfig}
-        data={hospitals}
-        options={tableOptions}
-        title="Моніторинг запитів"
-        detailPanel={(hospital) => (<HospitalDetail hospital={hospital} />)}
-      />
-    </Box>
-  );
+    <Paper elevation={2}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            {
+              columns.map(col => (
+                <TableCell key={col.label}>{col.label}</TableCell>)
+              )
+            }
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {requests.map(data => (
+            <TableRow key={data.id}>
+              <TableCell>{data.beneficiary.name}</TableCell>
+              <TableCell>{data.name}</TableCell>
+              <TableCell>{data.quantity}</TableCell>
+              <TableCell>{data.deadline}</TableCell>
+              <TableCell>
+                {data.contactPerson ? data.contactPerson.name : (
+                  <Button color="secondary" variant="contained">
+                    Assign
+                  </Button>
+                )}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </Paper>
+  )
 }
+
+export default HospitalList;
