@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './HomePage/HomePage';
 import AdminApp from './AdminApp';
+import '../index.css';
 
 function App() {
   return (
