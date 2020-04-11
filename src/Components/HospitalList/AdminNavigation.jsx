@@ -8,6 +8,9 @@ const AdminNavigation = () => (
       <ListItem component={NavLink} to="/admin/dashboard">
         <ListItemText primary="Dashboard" />
       </ListItem>
+      <ListItem component={NavLink} to="/admin/applications">
+        <ListItemText primary="Applications" />
+      </ListItem>
     </List>
   </>
 );

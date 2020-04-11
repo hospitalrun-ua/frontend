@@ -5,10 +5,11 @@ import {
   DialogActions,
   DialogTitle,
   DialogContent,
-  TextField
+  TextField,
+  Box,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { getModalStyle } from './'
+import { getModalStyle } from '.';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -21,58 +22,70 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const VolunteerJoin = ({ open, onClose }) => {
+const VolunteerJoin = ({ open, onClose, id }) => {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
 
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    help: ""
+    firstName: '',
+    lastName: '',
+    phone: '',
+    help: '',
   });
 
-  const updateFormData = event =>
-    setFormData({
+  const updateFormData = (event) => setFormData({
+    ...formData,
+    [event.target.name]: event.target.value,
+  });
+
+  const handleSubmit = (event) => {
+    const req = {
+      id,
       ...formData,
-      [event.target.name]: event.target.value
-    });
+    };
+    console.log(req);
+  };
 
-  const handleSubmit = event =>
-    console.log(formData)
-
-  const { firstName, lastName, phone, help } = formData;
+  const {
+    firstName, lastName, phone, help,
+  } = formData;
 
   return (
-    <Dialog open={open} onClose={onClose}>
-      <DialogTitle>Request for volunteers</DialogTitle>
+    <Dialog open={open} onClose={onClose} fullWidth>
+      <DialogTitle>Volunteer application</DialogTitle>
       <DialogContent>
         <form onSubmit={handleSubmit}>
+          <Box mb={2}>
+            <TextField
+              label="First name"
+              value={firstName}
+              name="firstName"
+              onChange={updateFormData}
+              fullWidth
+            />
+          </Box>
+          <Box mb={2}>
+            <TextField
+              label="Last name"
+              value={lastName}
+              name="lastName"
+              onChange={updateFormData}
+              fullWidth
+            />
+          </Box>
+          <Box mb={2}>
+            <TextField
+              label="Phone"
+              value={phone}
+              name="phone"
+              onChange={updateFormData}
+              fullWidth
+            />
+          </Box>
           <TextField
-            label='First name'
-            value={firstName}
-            name='firstName'
-            onChange={updateFormData}
-            fullWidth
-          />
-          <TextField
-            label='Last name'
-            value={lastName}
-            name='lastName'
-            onChange={updateFormData}
-            fullWidth
-          />
-          <TextField
-            label='Phone'
-            value={phone}
-            name='phone'
-            onChange={updateFormData}
-            fullWidth
-          />
-          <TextField
-            label='How can I help?'
+            label="Amount I can provide"
             value={help}
-            name='help'
+            name="help"
             onChange={updateFormData}
             fullWidth
           />
@@ -85,7 +98,7 @@ const VolunteerJoin = ({ open, onClose }) => {
         <Button color="primary" onClick={handleSubmit}>Create</Button>
       </DialogActions>
     </Dialog>
-  )
-}
+  );
+};
 
 export default VolunteerJoin;

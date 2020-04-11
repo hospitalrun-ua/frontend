@@ -1,10 +1,11 @@
 import React from 'react';
 import {
-  Drawer, Box, AppBar, Toolbar, makeStyles, CssBaseline, Container
+  Drawer, Box, AppBar, Toolbar, makeStyles, CssBaseline, Container,
 } from '@material-ui/core';
 import { Switch, Route } from 'react-router';
 import AdminNavigation from '../Components/HospitalList/AdminNavigation';
 import DashboardPage from './DashboardPage';
+import ApplicationPage from './ApplicationListPage';
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -45,6 +46,7 @@ const AdminApp = () => {
           <Box mt={2}>
             <Switch>
               <Route path="/admin/dashboard" component={DashboardPage} />
+              <Route path="/admin/applications" component={ApplicationPage} />
             </Switch>
 
           </Box>

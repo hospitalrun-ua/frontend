@@ -10,7 +10,7 @@ import Login from '../Login/Login';
 const { searchPlaceholder } = i18n.header;
 
 const Header = ({ ...props }) => {
-  const { isAuthenticated = false, toggleModal } = props;
+  const { isAuthenticated = false } = props;
 
   return (
     <div className="headerWrap">
@@ -20,13 +20,14 @@ const Header = ({ ...props }) => {
           <form noValidate autoComplete="off">
             <TextField label={searchPlaceholder} type="search" variant="outlined" size="small" />
           </form>
-          {!isAuthenticated &&
-            <Fragment>
+          {!isAuthenticated
+            && (
+            <>
               <CityChoice />
-              <JoinDropdown toggleModal={toggleModal}/>
+              {/* <JoinDropdown toggleModal={toggleModal} /> */}
               <Login />
-            </Fragment>
-          }
+            </>
+            )}
         </Grid>
       </Container>
     </div>
