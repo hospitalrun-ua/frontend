@@ -12,7 +12,7 @@ import '../index.css';
 const customTheme = createMuiTheme({
   palette: {
     primary: { main: '#1540A4' },
-    text: { secondary: '#B9C6E4' }
+    // text: { secondary: '#B9C6E4' }
   },
 });
 
@@ -26,7 +26,7 @@ function App() {
           <Route path="/admin" component={AdminApp} />
         </Switch>
       </Router>
-      <Footer />
+      {/* <Footer /> */}
     </ThemeProvider>
   );
 }

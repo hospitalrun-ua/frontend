@@ -7,6 +7,7 @@ import {
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 
+const apiUrl = 'https://hospitalrunstaging.eba-yqyr2bp5.eu-west-1.elasticbeanstalk.com/api';
 
 const columns = [
   { label: 'Facility', key: '' },
@@ -31,26 +32,26 @@ const DashboardPage = () => {
   const selectedContact = contacts.find((x) => x.name === selectedContactId);
 
   const getData = () => {
-    fetch('http://localhost:3001/api/resources')
+    fetch(`${apiUrl}/resources`)
       .then((x) => x.json())
+      .then((x) => x.list.filter((a) => a.name))
       .then((x) => {
-        setRequests(x.list);
-        const facilitiesX = x.list
+        setRequests(x);
+        const facilitiesX = x
           .reduce((res, next) => res.set(next.beneficiary.name, next.beneficiary), new Map());
         setFacilites([...facilitiesX.values()]);
 
-        const contactsX = x.list
+        const contactsX = x
           .reduce((res, next) => res.set(next.contactPerson.name, next.contactPerson), new Map());
         setContacts([...contactsX.values()]);
 
-        const categoriesX = x.list
+        const categoriesX = x
           .reduce((res, next) => res.set(next.name, next.name), new Map());
         setCategories([...categoriesX.values()]);
       });
   };
   const init = useRef(false);
   useEffect(() => {
-    console.log(init);
     if (!init.current) {
       getData();
       init.current = true;
@@ -61,16 +62,17 @@ const DashboardPage = () => {
     const req = {
       beneficiary: selectedFacility,
       contactPerson: selectedContact,
+      status: 'OPEN',
       items: [{
         name: selectedCategory,
         quantity: parseInt(amount, 10),
       }],
     };
 
-    fetch('http://localhost:3001/api/resources', {
+    fetch(`${apiUrl}/resources`, {
       method: 'POST',
       body: JSON.stringify(req),
-    }).then((() => getData()));
+    }).then(((x) => setRequests(x.list.filter((a) => a.name))));
   };
 
   return (

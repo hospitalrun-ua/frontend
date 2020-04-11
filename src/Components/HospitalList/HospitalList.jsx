@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Paper,
   Table,
@@ -8,6 +8,8 @@ import {
   TableCell,
   Button,
 } from '@material-ui/core';
+import { VolunteerJoin } from '../Modal';
+
 
 const columns = [
   { label: 'Facility', key: '' },
@@ -17,25 +19,34 @@ const columns = [
   { label: 'Contact person', key: '' },
   { label: '', key: '' },
 ];
+const apiUrl = 'https://hospitalrunstaging.eba-yqyr2bp5.eu-west-1.elasticbeanstalk.com/api';
 
 const HospitalList = () => {
-  const [hasError, setErrors] = useState(false); // @TODO: Handle the errors.
   const [requests, setRequests] = useState([]);
-  const [isLoading, setIsLoading] = useState(false); // @TODO: Use it!
 
-  async function fetchData() {
-    const res = await fetch('http://localhost:3001/api/resources');
-    res
-      .json()
-      .then(res => setRequests(res.list))
-      .catch(err => setErrors(err));
-  }
+  const getData = () => {
+    fetch(`${apiUrl}/resources`)
+      .then((x) => x.json())
+      .then((x) => x.list.filter((a) => a.name))
+      .then((x) => {
+        setRequests([...x]);
+      });
+  };
 
+  const [showAppModal, handleAppModal] = useState(false);
+  const [requestId, setRequestId] = useState(null);
+
+  const toggleModal = () => {
+    handleAppModal(!showAppModal);
+  };
+
+  const init = useRef(false);
   useEffect(() => {
-    setIsLoading(true);
-    fetchData();
-    setIsLoading(false);
-  }, []);
+    if (!init.current) {
+      getData();
+      init.current = true;
+    }
+  }, [init]);
 
   return (
     <Paper elevation={2}>
@@ -43,32 +54,42 @@ const HospitalList = () => {
         <TableHead>
           <TableRow>
             {
-              columns.map(col => (
-                <TableCell key={col.label}>{col.label}</TableCell>)
-              )
+              columns.map((col) => (
+                <TableCell key={col.label}>{col.label}</TableCell>))
             }
           </TableRow>
         </TableHead>
         <TableBody>
-          {requests.map(data => (
+          {requests.map((data) => (
             <TableRow key={data.id}>
               <TableCell>{data.beneficiary.name}</TableCell>
               <TableCell>{data.name}</TableCell>
               <TableCell>{data.quantity}</TableCell>
               <TableCell>{data.deadline}</TableCell>
               <TableCell>
-                {data.contactPerson ? data.contactPerson.name : (
-                  <Button color="secondary" variant="contained">
-                    Assign
-                  </Button>
-                )}
+                {data.contactPerson?.name}
+              </TableCell>
+              <TableCell>
+                <Button
+                  color="secondary"
+                  variant="contained"
+                  onClick={() => {
+                    setRequestId(data.id);
+                    toggleModal(true);
+                  }}
+                >
+                  Apply
+                </Button>
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
+      <VolunteerJoin open={showAppModal} id={requestId} onClose={toggleModal} />
     </Paper>
-  )
-}
+
+
+  );
+};
 
 export default HospitalList;
