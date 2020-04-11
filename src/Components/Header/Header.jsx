@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react';
-import { Container, TextField, Grid } from '@material-ui/core';
+import {
+  Container, TextField, Grid, Button,
+} from '@material-ui/core';
 import { logo } from '../../assets/icons';
 import i18n from '../../i18n';
 import './Header.css';
 import CityChoice from '../CityChoice/CityChoice';
 import JoinDropdown from '../JoinDropdown/JoinDropdown';
 import Login from '../Login/Login';
+import { NavLink } from 'react-router-dom';
 
 const { searchPlaceholder } = i18n.header;
 
@@ -25,7 +28,8 @@ const Header = ({ ...props }) => {
             <>
               <CityChoice />
               {/* <JoinDropdown toggleModal={toggleModal} /> */}
-              <Login />
+              <NavLink variant="contained" component={Button} to="/admin/dashboard" color="primary">Cabinet</NavLink>
+              {/* <Login /> */}
             </>
             )}
         </Grid>
