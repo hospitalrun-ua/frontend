@@ -22,10 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const VolunteerJoin = ({ open, onClose, id }) => {
-  const classes = useStyles();
-  const [modalStyle] = React.useState(getModalStyle);
-
+const VolunteerJoin = ({ open, onClose }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -38,14 +35,6 @@ const VolunteerJoin = ({ open, onClose, id }) => {
     [event.target.name]: event.target.value,
   });
 
-  const handleSubmit = (event) => {
-    const req = {
-      id,
-      ...formData,
-    };
-    console.log(req);
-  };
-
   const {
     firstName, lastName, phone, help,
   } = formData;
@@ -54,7 +43,7 @@ const VolunteerJoin = ({ open, onClose, id }) => {
     <Dialog open={open} onClose={onClose} fullWidth>
       <DialogTitle>Volunteer application</DialogTitle>
       <DialogContent>
-        <form onSubmit={handleSubmit}>
+        <form>
           <Box mb={2}>
             <TextField
               label="First name"
@@ -95,7 +84,7 @@ const VolunteerJoin = ({ open, onClose, id }) => {
         <Button color="secondary" onClick={onClose}>
           Cancel
         </Button>
-        <Button color="primary" onClick={handleSubmit}>Create</Button>
+        <Button color="primary" onClick={onClose}>Create</Button>
       </DialogActions>
     </Dialog>
   );

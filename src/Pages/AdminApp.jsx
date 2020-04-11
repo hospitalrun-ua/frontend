@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router';
 import AdminNavigation from '../Components/HospitalList/AdminNavigation';
 import DashboardPage from './DashboardPage';
 import ApplicationPage from './ApplicationListPage';
+import { logo } from '../assets/icons';
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -35,7 +36,9 @@ const AdminApp = () => {
         classes={{ paper: classes.drawer }}
         PaperProps={{ elevation: 4 }}
       >
-        <Box className={classes.logo} />
+        <Box className={classes.logo} display="flex" alignItems="center">
+          {logo}
+        </Box>
         <AdminNavigation />
       </Drawer>
       <Box width={1} className={classes.main}>
