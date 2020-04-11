@@ -69,10 +69,10 @@ const DashboardPage = () => {
       }],
     };
 
-    fetch(`${apiUrl}/resources`, {
+    /* fetch(`${apiUrl}/resources`, {
       method: 'POST',
       body: JSON.stringify(req),
-    }).then(((x) => setRequests(x.list.filter((a) => a.name))));
+    }).then(((x) => setRequests(x.list.filter((a) => a.name)))); */
   };
 
   return (
