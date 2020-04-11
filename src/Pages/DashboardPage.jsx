@@ -122,7 +122,7 @@ const DashboardPage = () => {
           </TableHead>
           <TableBody>
             {requests.map((x) => (
-              <TableRow key={x.key}>
+              <TableRow key={x.id}>
                 <TableCell>{x.beneficiary.name}</TableCell>
                 <TableCell>{x.name}</TableCell>
                 <TableCell>{x.quantity}</TableCell>
