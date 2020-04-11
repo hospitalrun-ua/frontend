@@ -1,15 +1,15 @@
 import React from 'react';
+import { Box } from '@material-ui/core';
 import { markerIcon } from '../../assets/icons';
 import i18n from '../../i18n';
-import './CityChoice.css';
 
 const { cityChoice } = i18n.header;
 
 const CityChoice = () => (
-  <div className="cityChoiceWrap">
+  <Box display="flex" alignItems="center">
     {markerIcon}
-    <span className="cityChoiceTitle">{cityChoice}</span>
-  </div>
+    <Box ml={2} component="span">{cityChoice}</Box>
+  </Box>
 );
 
 export default CityChoice;
