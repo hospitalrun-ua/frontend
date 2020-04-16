@@ -23,6 +23,7 @@ const DashboardPage = () => {
   const [selectedContactId, setSelectedContactId] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
+  const [resourceEditId, setResourceEditId] = useState(0);
   const [requests, setRequests] = useState([]);
   const [facilities, setFacilites] = useState([]);
   const [contacts, setContacts] = useState([]);
@@ -30,6 +31,33 @@ const DashboardPage = () => {
   const [amount, setAmount] = useState(0);
   const selectedFacility = facilities.find((x) => x.name === selectedFacilityId);
   const selectedContact = contacts.find((x) => x.name === selectedContactId);
+
+  useEffect(() => {
+    if (modalOpen) {
+      setSelectedFacilityId('');
+      setSelectedContactId('');
+      setSelectedCategory('');
+      setAmount(0);
+    } else if (resourceEditId) {
+      setTimeout(() => setResourceEditId(0), 50);
+    }
+  }, [modalOpen]);
+
+  useEffect(() => {
+    if (resourceEditId) {
+      const {
+        name,
+        quantity,
+        beneficiary,
+        contactPerson,
+      } = requests.find(({ id }) => id === resourceEditId);
+
+      setSelectedFacilityId(beneficiary.name);
+      setSelectedContactId(contactPerson.name);
+      setSelectedCategory(name);
+      setAmount(quantity);
+    }
+  }, [resourceEditId]);
 
   const getData = () => {
     fetch(`${apiUrl}/resources`)
@@ -58,7 +86,7 @@ const DashboardPage = () => {
     }
   }, [init]);
 
-  const submit = () => {
+  const submit = (modalClose) => {
     const req = {
       beneficiary: selectedFacility,
       contactPerson: selectedContact,
@@ -69,10 +97,33 @@ const DashboardPage = () => {
       }],
     };
 
-    /* fetch(`${apiUrl}/resources`, {
-      method: 'POST',
-      body: JSON.stringify(req),
-    }).then(((x) => setRequests(x.list.filter((a) => a.name)))); */
+    /* if (resourceEditId) {
+      fetch(`${apiUrl}/resources/${resourceEditId}`, {
+        method: 'PUT',
+        body: JSON.stringify(req),
+      }).then((response) => {
+        setRequests(requests.reduce((acc, rowData) => {
+          if (rowData.id === resourceEditId) {
+            acc.push(response);
+          } else {
+            acc.push(rowData);
+          }
+
+          return acc;
+        }), []);
+      }).then(() => modalClose())
+        .catch((e) => console.log(e));
+    } else {
+      fetch(`${apiUrl}/resources`, {
+        method: 'POST',
+        body: JSON.stringify(req),
+      }).then((x) => setRequests(x.list.filter((a) => a.name)))
+        .then(() => modalClose())
+        .catch((e) => console.log(e));
+    } */
+
+    // temporarily until the server is implemented
+    modalClose();
   };
 
   return (
@@ -135,7 +186,13 @@ const DashboardPage = () => {
                   )}
                 </TableCell>
                 <TableCell align="right">
-                  <IconButton variant="icon">
+                  <IconButton
+                    variant="icon"
+                    onClick={() => {
+                      setResourceEditId(x.id);
+                      setModalOpen(true);
+                    }}
+                  >
                     <Icon>edit</Icon>
                   </IconButton>
                 </TableCell>
@@ -146,7 +203,11 @@ const DashboardPage = () => {
       </Paper>
 
       <Dialog open={modalOpen} fullWidth>
-        <DialogTitle>New Request</DialogTitle>
+        <DialogTitle>
+          {resourceEditId ? 'Update' : 'New'}
+          {' '}
+          Request
+        </DialogTitle>
         <DialogContent>
           <Box mb={2}>
             <FormControl fullWidth>
@@ -229,11 +290,10 @@ const DashboardPage = () => {
           <Button
             color="primary"
             onClick={() => {
-              submit();
-              setModalOpen(false);
+              submit(() => setModalOpen(false));
             }}
           >
-            Create
+            {resourceEditId ? 'Update' : 'Create'}
           </Button>
         </DialogActions>
       </Dialog>
