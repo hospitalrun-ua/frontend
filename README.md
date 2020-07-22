@@ -4,6 +4,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <img width="1212" alt="PandAid - main " src="https://user-images.githubusercontent.com/8326985/88194450-88e9f600-cc47-11ea-904c-cddb3e6d953d.png">
 
+**Create new request:**
+
+<img width="1208" alt="PandAid - new request" src="https://user-images.githubusercontent.com/8326985/88194878-001f8a00-cc48-11ea-9aee-b138f2cb7002.png">
+
+**Aplication**
+<img width="1209" alt="PandAid - Application" src="https://user-images.githubusercontent.com/8326985/88194927-11689680-cc48-11ea-9edd-9581d4d665d0.png">
+
+
 ## Available Scripts
 
 In the project directory, you can run:
