@@ -1,6 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![alt text](https://github.com/hospitalrun-ua/frontend/tree/master/images/PandAid%20-%20main%20.png?raw=true)
+## PandAid Dashboard
+
+<img width="1212" alt="PandAid - main " src="https://user-images.githubusercontent.com/8326985/88194450-88e9f600-cc47-11ea-904c-cddb3e6d953d.png">
 
 ## Available Scripts
 
