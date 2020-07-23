@@ -16,4 +16,16 @@ export default {
     },
     loginButton: 'ЛОГIН',
   },
+  registrationForm: {
+    firstName: 'Ім\'я',
+    lastName: 'Прізвище',
+    phone: 'Контактний Номер',
+    city: 'Ваше Місто',
+    help: 'Чим Я Хочу допомогти',
+    photo: 'Завантажити фото',
+    header: {
+      organization: 'Заявка для організацій',
+      volunteer: 'Заявка для волонтерів'
+    }
+  }
 };
