@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
+  Box,
   Button,
   ClickAwayListener,
   Grow,
@@ -12,7 +13,6 @@ import {
 
 import i18n from '../../i18n';
 import { plusIcon } from '../../assets/icons';
-import './JoinDropdown.css';
 
 const { title, options } = i18n.header.joinDropdown;
 
@@ -73,7 +73,7 @@ export default function JoinDropdown({ toggleModal }) {
           onClick={handleToggle}
         >
           {plusIcon}
-          <span className="joinDropdownTitle">{title}</span>
+          <Box component="span" ml={1}>{title}</Box>
         </Button>
         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (

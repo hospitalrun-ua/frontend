@@ -1,13 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
-  Container, TextField, Grid, Button,
+  Container, TextField, Grid, Button, Box,
 } from '@material-ui/core';
 import { logo } from '../../assets/icons';
 import i18n from '../../i18n';
-import './Header.css';
 import CityChoice from '../CityChoice/CityChoice';
-import JoinDropdown from '../JoinDropdown/JoinDropdown';
-import Login from '../Login/Login';
+// import JoinDropdown from '../JoinDropdown/JoinDropdown';
+// import Login from '../Login/Login';
 import { NavLink } from 'react-router-dom';
 
 const { searchPlaceholder } = i18n.header;
@@ -16,7 +15,7 @@ const Header = ({ ...props }) => {
   const { isAuthenticated = false } = props;
 
   return (
-    <div className="headerWrap">
+    <Box display="flex" alignItems="center" height="70px" bgcolor="white" boxShadow={2}>
       <Container>
         <Grid container direction="row" alignItems="center" justify="space-between">
           {logo}
@@ -24,17 +23,17 @@ const Header = ({ ...props }) => {
             <TextField label={searchPlaceholder} type="search" variant="outlined" size="small" />
           </form>
           {!isAuthenticated
-            && (
+          && (
             <>
               <CityChoice />
               {/* <JoinDropdown toggleModal={toggleModal} /> */}
               <NavLink variant="contained" component={Button} to="/admin/dashboard" color="primary">Cabinet</NavLink>
               {/* <Login /> */}
             </>
-            )}
+          )}
         </Grid>
       </Container>
-    </div>
+    </Box>
   );
 };
 
