@@ -45,7 +45,7 @@ const VolunteerJoin = ({ open, onClose }) => {
 
   return (
     <Dialog open={open} onClose={onClose} fullWidth>
-      <DialogTitle>{registrationForm.header.volunteer}</DialogTitle>
+      <DialogTitle>{registrationForm.header.organization}</DialogTitle>
       <DialogContent>
         <form>
           <Box mb={2}>

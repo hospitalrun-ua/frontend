@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function JoinDropdown({ toggleModal }) {
+export default function JoinDropdown({ toggleVolunteerModal, toggleOrganizationModal }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
@@ -42,9 +42,14 @@ export default function JoinDropdown({ toggleModal }) {
     setOpen(false);
   };
 
-  const handleCloseAndModal = (event) => {
+  const handleCloseAndVolunteerModal = (event) => {
     handleClose(event);
-    toggleModal();
+    toggleVolunteerModal();
+  }
+
+  const handleCloseAndOrganizationModal = (event) => {
+    handleClose(event);
+    toggleOrganizationModal();
   }
 
   function handleListKeyDown(event) {
@@ -84,8 +89,8 @@ export default function JoinDropdown({ toggleModal }) {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>{options[0]}</MenuItem>
-                    <MenuItem onClick={handleCloseAndModal}>{options[1]}</MenuItem>
+                    <MenuItem onClick={handleCloseAndOrganizationModal}>{options[0]}</MenuItem>
+                    <MenuItem onClick={handleCloseAndVolunteerModal}>{options[1]}</MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
