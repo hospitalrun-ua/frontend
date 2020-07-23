@@ -288,6 +288,7 @@ const DashboardPage = () => {
             Cancel
           </Button>
           <Button
+            variant="contained"
             color="primary"
             onClick={() => {
               submit(() => setModalOpen(false));
