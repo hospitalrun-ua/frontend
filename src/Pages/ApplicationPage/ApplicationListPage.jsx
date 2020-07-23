@@ -1,9 +1,11 @@
 import React from 'react';
 import {
-  Typography, Box, Paper, Table, TableHead, TableRow, TableCell, TableBody, Button, IconButton, Icon, Select, MenuItem,
+  Typography, Box, Paper, Table, TableHead, TableRow, TableCell, TableBody, Button, IconButton, Icon, Select, MenuItem, TablePagination, TableFooter,
 } from '@material-ui/core';
+import useStyles from './style';
+import applications from './mock';
+import { usePaginateHandlers } from './usePaginateHandlers';
 
-import { makeStyles } from '@material-ui/core/styles';
 
 const columns = [
   { label: 'Request ID' },
@@ -14,59 +16,12 @@ const columns = [
   { label: 'Status' },
   { label: '' },
 ];
-const applications = [
-  {
-    id: 1,
-    requestId: 1,
-    firstName: 'Jane',
-    lastName: 'Doe',
-    phone: '+380 93 123 45 67',
-    help: '100',
-    approved: false,
-    status: '',
-  },
-  {
-    id: 2,
-    requestId: 1,
-    firstName: 'Joan',
-    lastName: 'Doe',
-    phone: '+380 93 76 54 321',
-    help: '300',
-    approved: true,
-    status: 'in_progress',
-  },
-];
-
-const useStyles = makeStyles(() => ({
-  on_hold: {
-    '&:focus': {
-      backgroundColor: '#FFB946',
-    },
-    backgroundColor: '#FFB946',
-  },
-  in_progress: {
-    '&:focus': {
-      backgroundColor: '#0B9785',
-    },
-    backgroundColor: '#0B9785',
-  },
-  receieved: {
-    '&:focus': {
-      backgroundColor: '#F7685B',
-    },
-    backgroundColor: '#F7685B',
-  },
-  closed: {
-    '&:focus': {
-      backgroundColor: '#1540A4',
-    },
-    backgroundColor: '#1540A4',
-  },
-}));
-
 
 const ApplicationPage = () => {
   const classes = useStyles();
+  const [handlePageChange,
+    handleChangeRowsPerPage,
+    pagination, paginateData] = usePaginateHandlers(applications);
   return (
     <>
       <Box mb={2}>
@@ -81,7 +36,7 @@ const ApplicationPage = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {applications.map((x) => (
+              {paginateData.map((x) => (
                 <TableRow key={x.id}>
                   <TableCell>
                     {x.requestId}
@@ -119,6 +74,17 @@ const ApplicationPage = () => {
                 </TableRow>
               ))}
             </TableBody>
+            <TableFooter>
+              <TableRow>
+                <TablePagination
+                  count={applications.length}
+                  onChangePage={handlePageChange}
+                  page={pagination.page}
+                  rowsPerPage={pagination.limit}
+                  onChangeRowsPerPage={handleChangeRowsPerPage}
+                />
+              </TableRow>
+            </TableFooter>
           </Table>
         </Paper>
       </Box>
