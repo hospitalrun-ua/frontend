@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+**Project description** in Ukrainian available here: https://pandaid.plexie.com/app/#/public/project/fda3e9c1-cb6c-4083-be94-9b5bb28ad1e2
+
 ## PandAid Dashboard
 
 <img width="1212" alt="PandAid - main " src="https://user-images.githubusercontent.com/8326985/88194450-88e9f600-cc47-11ea-904c-cddb3e6d953d.png">
