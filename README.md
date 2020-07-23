@@ -4,16 +4,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 **PandAid Presentation** available [here](https://drive.google.com/file/d/12wMkp3OS89HfmiJLtILFSp-eGhG1Kbe4/view)
 
+<hr/>
+
 ## PandAid Dashboard
 
 <img width="1212" alt="PandAid - main " src="https://user-images.githubusercontent.com/8326985/88194450-88e9f600-cc47-11ea-904c-cddb3e6d953d.png">
+
+<hr/>
 
 **Create new request:**
 
 <img width="1208" alt="PandAid - new request" src="https://user-images.githubusercontent.com/8326985/88194878-001f8a00-cc48-11ea-9aee-b138f2cb7002.png">
 
+<hr/>
+
 **Aplication**
 <img width="1209" alt="PandAid - Application" src="https://user-images.githubusercontent.com/8326985/88194927-11689680-cc48-11ea-9edd-9581d4d665d0.png">
+
+<hr/>
 
 
 ## Available Scripts
