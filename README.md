@@ -1,5 +1,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# How to contribute?
+
+Before start - click `Fork` тут https://github.com/hospitalrun-ua/frontend (top right corner)
+ If everything ok with ssh keys,if not - use  https : 
+<pre><code>
+git clone git@github.com:${YOUR_GITHUB_USERNAME}/frontend.git 
+cd frontend
+npm i -g yarn
+yarn install
+yarn start
+</code></pre>
+
+Go to this [link](https://hospitalrunstaging.eba-yqyr2bp5.eu-west-1.elasticbeanstalk.com/api/resources) - allow access without certification and now you have everything for a start.
+Just start in browser http://localhost:3000/
+
 **Project description** in Ukrainian available [here](https://pandaid.plexie.com/app/#/public/project/fda3e9c1-cb6c-4083-be94-9b5bb28ad1e2)
 
 **PandAid Presentation** available [here](https://drive.google.com/file/d/12wMkp3OS89HfmiJLtILFSp-eGhG1Kbe4/view)

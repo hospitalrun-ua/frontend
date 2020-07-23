@@ -11,6 +11,7 @@ import OrganizationJoin from '../Modal/OrganizationJoin';
 import VolunteerJoin from '../Modal/VolunteerJoin';
 import Login from '../Login/Login';
 import { NavLink } from 'react-router-dom';
+import JoinMenu from '../JoinMenu/JoinMenu';
 
 const { searchPlaceholder } = i18n.header;
 
@@ -39,7 +40,9 @@ const Header = ({ ...props }) => {
             && (
             <>
               <CityChoice />
+              
               <JoinDropdown toggleVolunteerModal={toggleVolunteerModal} toggleOrganizationModal={toggleOrganizationModal} />
+
               <NavLink variant="contained" component={Button} to="/admin/dashboard" color="primary">Cabinet</NavLink>
               
               <OrganizationJoin
