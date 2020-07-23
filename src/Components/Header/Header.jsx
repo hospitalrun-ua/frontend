@@ -9,6 +9,7 @@ import CityChoice from '../CityChoice/CityChoice';
 import JoinDropdown from '../JoinDropdown/JoinDropdown';
 import Login from '../Login/Login';
 import { NavLink } from 'react-router-dom';
+import JoinMenu from '../JoinMenu/JoinMenu';
 
 const { searchPlaceholder } = i18n.header;
 
@@ -27,6 +28,7 @@ const Header = ({ ...props }) => {
             && (
             <>
               <CityChoice />
+              <JoinMenu />
               {/* <JoinDropdown toggleModal={toggleModal} /> */}
               <NavLink variant="contained" component={Button} to="/admin/dashboard" color="primary">Cabinet</NavLink>
               {/* <Login /> */}

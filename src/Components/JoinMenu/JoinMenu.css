@@ -1,0 +1,17 @@
+button.join-button {
+    text-transform: none;
+    color: #7A7D8C;
+}
+
+.join-button svg {
+    margin-right: 10px;
+}
+
+.join-menu {
+    color: #7A7D8C;
+}
+
+.join-menu .material-icons{
+    color: #7A7D8C;
+    margin-right: 10px;
+}
