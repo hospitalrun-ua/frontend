@@ -9,7 +9,7 @@ import {
   Button,
 } from '@material-ui/core';
 import { VolunteerJoin } from '../Modal';
-
+import PersonCell from '../PersonCell';
 
 const columns = [
   { label: 'Facility', key: '' },
@@ -19,7 +19,8 @@ const columns = [
   { label: 'Contact person', key: '' },
   { label: '', key: '' },
 ];
-const apiUrl = 'https://hospitalrunstaging.eba-yqyr2bp5.eu-west-1.elasticbeanstalk.com/api';
+const apiUrl =
+  'https://hospitalrunstaging.eba-yqyr2bp5.eu-west-1.elasticbeanstalk.com/api';
 
 const HospitalList = () => {
   const [requests, setRequests] = useState([]);
@@ -53,10 +54,9 @@ const HospitalList = () => {
       <Table>
         <TableHead>
           <TableRow>
-            {
-              columns.map((col) => (
-                <TableCell key={col.label}>{col.label}</TableCell>))
-            }
+            {columns.map((col) => (
+              <TableCell key={col.label}>{col.label}</TableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -67,7 +67,7 @@ const HospitalList = () => {
               <TableCell>{data.quantity}</TableCell>
               <TableCell>{data.deadline}</TableCell>
               <TableCell>
-                {data.contactPerson?.name}
+                <PersonCell person={data.contactPerson} />
               </TableCell>
               <TableCell>
                 <Button
@@ -87,8 +87,6 @@ const HospitalList = () => {
       </Table>
       <VolunteerJoin open={showAppModal} id={requestId} onClose={toggleModal} />
     </Paper>
-
-
   );
 };
 
