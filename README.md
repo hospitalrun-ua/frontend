@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Before start - click `Fork` тут https://github.com/hospitalrun-ua/frontend (top right corner)
 
-`git clone git@github.com:lenadgit/frontend.git` # если все норм с ssh ключами, если нет то по https
+`git clone git@github.com:${YOUR_GITHUB_USERNAME}/frontend.git` # если все норм с ssh ключами, если нет то по https
 
 `cd frontend`
 
