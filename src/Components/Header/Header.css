@@ -7,17 +7,50 @@
     align-items: center;
 }
 
+.submit-form {
+	padding: 1px;
+	background: #F1F1F1;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+
 .searchfield {
 	background: #F1F1F1;
 	width: 300px;
 	border: none !important;
 	outline: none;
+	padding-left: 46px !important;
 }
 
-.searchfield:focus {
-	border: none !important;
+.submit-btn {
+	margin: 2px 0 0 2px !important;
+	position: absolute !important;
+    z-index: 100;
+    width: 40px !important;
+    height: 30px;
+    background-image: url('search.png');
+    background-repeat: no-repeat;
+
 }
 
-.searchfield:hover {
-	border: none !important;
+.submit-btn:hover {
+	background: transparent !important;
+	width: 40px !important;
+	background-image: url('search.png') !important;
+	background-repeat: no-repeat !important;
+}
+
+.MuiButton-root {
+	min-width: 40px !important;
+}
+
+.MuiInput-underline:before, 
+.MuiInput-underline:after {
+	border-bottom: none !important;
+}
+
+.MuiInput-underline:before {
+	min-width: 30px !important;
 }

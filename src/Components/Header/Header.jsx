@@ -20,9 +20,9 @@ const Header = ({ ...props }) => {
       <Container>
         <Grid container direction="row" alignItems="center" justify="space-between">
           {logo}
-          <form noValidate autoComplete="off">
-          <Button type = "Submit">S</Button>
-            <TextField  type="search" variant="outlined" size="small" className = "searchfield" />
+          <form noValidate autoComplete="off" className = "submit-form">
+          <Button type = "submit" className = "submit-btn"></Button>
+            <TextField  type="search" className = "searchfield" />
           </form>
           {!isAuthenticated
             && (
