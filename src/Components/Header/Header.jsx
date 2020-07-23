@@ -22,7 +22,7 @@ const Header = ({ ...props }) => {
           {logo}
           <form noValidate autoComplete="off" className = "submit-form">
           <Button type = "submit" className = "submit-btn"></Button>
-            <TextField  type="search" className = "searchfield" />
+            <TextField  type="search" className = "searchfield" placeholder = "Пошук"/>
           </form>
           {!isAuthenticated
             && (
