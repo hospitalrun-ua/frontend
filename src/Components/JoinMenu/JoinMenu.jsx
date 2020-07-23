@@ -32,7 +32,7 @@ const JoinMenu = () => {
       >
         <MenuItem onClick={handleClose} className="join-menu-item">
           <Icon style={{ color: '#1540A4' }}>store</Icon>
-          <span>Як Организація</span>
+          <span>Як Організація</span>
         </MenuItem>
         <MenuItem onClick={handleClose} className="join-menu-item">
           <Icon style={{ color: '#1540A4' }}>person</Icon>
