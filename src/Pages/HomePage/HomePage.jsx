@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Box, Typography } from '@material-ui/core';
 import HospitalList from '../../Components/HospitalList/HospitalList';
 import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
 
 const HomePage = () => (
   <div>
@@ -12,6 +13,7 @@ const HomePage = () => (
         <HospitalList />
       </Box>
     </Container>
+    <Footer />
   </div>
 );
 
