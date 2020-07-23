@@ -3,6 +3,7 @@ import {
   Drawer, Box, AppBar, Toolbar, makeStyles, CssBaseline, Container,
 } from '@material-ui/core';
 import { Switch, Route } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import AdminNavigation from '../Components/HospitalList/AdminNavigation';
 import DashboardPage from './DashboardPage';
 import ApplicationPage from './ApplicationListPage';
@@ -37,7 +38,7 @@ const AdminApp = () => {
         PaperProps={{ elevation: 4 }}
       >
         <Box className={classes.logo} display="flex" alignItems="center">
-          {logo}
+          <NavLink to="/">{logo}</NavLink>
         </Box>
         <AdminNavigation />
       </Drawer>
