@@ -6,7 +6,7 @@ import { Switch, Route } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import AdminNavigation from '../Components/HospitalList/AdminNavigation';
 import DashboardPage from './DashboardPage';
-import ApplicationPage from './ApplicationListPage';
+import ApplicationPage from './ApplicationPage/ApplicationListPage';
 import { logo } from '../assets/icons';
 
 const useStyles = makeStyles((theme) => ({
@@ -52,7 +52,6 @@ const AdminApp = () => {
               <Route path="/admin/dashboard" component={DashboardPage} />
               <Route path="/admin/applications" component={ApplicationPage} />
             </Switch>
-
           </Box>
         </Container>
       </Box>
