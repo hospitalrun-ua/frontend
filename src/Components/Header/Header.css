@@ -6,3 +6,18 @@
     display: flex;
     align-items: center;
 }
+
+.searchfield {
+	background: #F1F1F1;
+	width: 300px;
+	border: none !important;
+	outline: none;
+}
+
+.searchfield:focus {
+	border: none !important;
+}
+
+.searchfield:hover {
+	border: none !important;
+}
