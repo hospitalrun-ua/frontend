@@ -30,11 +30,11 @@ const JoinMenu = () => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleClose} className="join-menu-item">
           <Icon style={{ color: '#1540A4' }}>store</Icon>
           <span>Як Организація</span>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleClose} className="join-menu-item">
           <Icon style={{ color: '#1540A4' }}>person</Icon>
           <span>Як Волонтер</span>
         </MenuItem>

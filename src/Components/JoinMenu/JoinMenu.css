@@ -11,6 +11,11 @@ button.join-button {
     color: #7A7D8C;
 }
 
+li.join-menu-item {
+    color: #7A7D8C;
+    font-weight: normal;
+}
+
 .join-menu .material-icons{
     color: #7A7D8C;
     margin-right: 10px;
