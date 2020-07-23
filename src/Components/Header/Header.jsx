@@ -34,7 +34,8 @@ const Header = ({ ...props }) => {
         <Grid container direction="row" alignItems="center" justify="space-between">
           {logo}
           <form noValidate autoComplete="off">
-            <TextField label={searchPlaceholder} type="search" variant="outlined" size="small" />
+          <Button type = "Submit">S</Button>
+            <TextField  type="search" variant="outlined" size="small" className = "searchfield" />
           </form>
           {!isAuthenticated
             && (
