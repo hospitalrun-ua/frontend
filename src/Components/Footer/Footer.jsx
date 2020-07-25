@@ -29,7 +29,7 @@ const menuItemsMock = [
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexShrink: 0,
     backgroundColor: theme.palette.primary['main'],
     padding: '4rem 0'
   },
