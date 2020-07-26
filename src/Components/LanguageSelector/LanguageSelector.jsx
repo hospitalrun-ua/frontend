@@ -65,8 +65,10 @@ const LanguageSelector = () => {
   };
 
   const handleSelect = (lang) => {
-    setLanguage(lang);
     handleClose();
+    setTimeout(() => {
+      setLanguage(lang);
+    }, 100);
     // TODO change interface language
   };
 
@@ -90,12 +92,14 @@ const LanguageSelector = () => {
           horizontal: 'left',
         }}
       >
-        {Object.entries(languages).map(([key, value]) => (
-          <MenuItem key={key} onClick={() => handleSelect(key)}>
-            <ListItemIcon>{value.icon}</ListItemIcon>
-            <ListItemText primary={value.name} />
-          </MenuItem>
-        ))}
+        {Object.entries(languages)
+          .filter(([key]) => key !== language)
+          .map(([key, value]) => (
+            <MenuItem key={key} onClick={() => handleSelect(key)}>
+              <ListItemIcon>{value.icon}</ListItemIcon>
+              <ListItemText primary={value.name} />
+            </MenuItem>
+          ))}
       </Menu>
     </>
   );
