@@ -15,9 +15,11 @@ yarn start
 Go to this [link](https://hospitalrunstaging.eba-yqyr2bp5.eu-west-1.elasticbeanstalk.com/api/resources) - allow access without certification and now you have everything for a start.
 Just start in browser http://localhost:3000/
 
-**Project description** in Ukrainian available [here](https://pandaid.plexie.com/app/#/public/project/fda3e9c1-cb6c-4083-be94-9b5bb28ad1e2)
+## General description:
+UA: **Project [description](https://pandaid.plexie.com/app/#/public/project/fda3e9c1-cb6c-4083-be94-9b5bb28ad1e2)** 
+ENG: **Project [description](https://pandaid.splashthat.com/)**
 
-**PandAid Presentation** available [here](https://drive.google.com/file/d/12wMkp3OS89HfmiJLtILFSp-eGhG1Kbe4/view)
+**PandAid [Presentation](https://drive.google.com/file/d/12wMkp3OS89HfmiJLtILFSp-eGhG1Kbe4/view)** 
 
 <hr/>
 
