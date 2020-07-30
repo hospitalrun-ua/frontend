@@ -129,12 +129,21 @@ export default () => {
             alignItems="flex-start"
           >
             <Grid item xs={12} sm={3}>
-              {footerLogo}
+            {footerLogo}
             </Grid>
             <Grid item xs={12} sm={3}>
-              Copyright PandAid (c) 2020
+            Terms of Service
+            </Grid>
+            <Grid item xs={12} sm={3}>
+            Privacy Policy
+            </Grid>
+            <Grid item xs={12} sm={3}>
+
+            Copyright (©) 2020
+
             </Grid>
           </Grid>
+
         </Grid>
       </Container>
     </footer>
