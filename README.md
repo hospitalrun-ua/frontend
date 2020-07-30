@@ -108,3 +108,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## License
+See Reason license in LICENSE.txt .
+
+Works that are forked from other projects are under their original licenses.
