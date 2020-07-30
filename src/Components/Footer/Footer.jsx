@@ -109,15 +109,15 @@ export default () => {
             <Typography variant="body1" className={classes.contact}>
               +38 (044) 281-42-87, 0-800-503-400 22, Bulvarno-Kudriavska St,<br></br> Kyiv, 01601 UKRAINE
             </Typography>
-            <Grid 
-              direction="row" 
-              justify="space-between" 
-              container 
+            <Grid
+              direction="row"
+              justify="space-between"
+              container
               className={classes.socIconsWrapper}
             >
-              <a href="#" className={classes.socIcon}>{facebookIcon}</a>
-              <a href="#" className={classes.socIcon}>{twitterIcon}</a>
-              <a href="#" className={classes.socIcon}>{linkedInIcon}</a>
+              <a href="https://www.facebook.com/PandAid-100100004981155/" className={classes.socIcon}>{facebookIcon}</a>
+              <a href="https://github.com/hospitalrun-ua" className={classes.socIcon}>{twitterIcon}</a>
+              <a href="https://www.linkedin.com/company/pandaid-ua/" className={classes.socIcon}>{linkedInIcon}</a>
             </Grid>
           </Grid>
 
