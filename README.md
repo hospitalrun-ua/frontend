@@ -14,17 +14,21 @@ yarn start
 </code></pre>
 
 # Tasks
-Github [tasks](https://github.com/orgs/hospitalrun-ua/projects/6) 
+All our open tasks at Github :
+[frontend tasks](https://github.com/orgs/hospitalrun-ua/projects/6) 
+[Backend tasks](https://github.com/orgs/hospitalrun-ua/projects/6) 
+[docs tasks](https://github.com/orgs/hospitalrun-ua/projects/6) 
 
 Go to this [link](https://hospitalrunstaging.eba-yqyr2bp5.eu-west-1.elasticbeanstalk.com/api/resources) - allow access without certification and now you have everything for a start.
 Just start in browser http://localhost:3000/
 
-## General description:
+## General description
 UA: **Project [description](https://pandaid.plexie.com/app/#/public/project/fda3e9c1-cb6c-4083-be94-9b5bb28ad1e2)** 
 ENG: **Project [description](https://pandaid.splashthat.com/)**
 
 **PandAid [Presentation](https://drive.google.com/file/d/12wMkp3OS89HfmiJLtILFSp-eGhG1Kbe4/view)** 
 
+### Don't forget  add your contribution to your cv and [Linkedin profile](https://www.linkedin.com/company/pandaid-ua/about/) ! 
 <hr/>
 
 ## PandAid Dashboard
