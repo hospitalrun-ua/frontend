@@ -107,3 +107,19 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+<table> 
+  <tr>
+    <td align="center"><a href="https://github.com/tomkax"><img src="https://avatars0.githubusercontent.com/u/8326985?s=460&u=e3ed157265b717a3f7227f23393ce170a0578038&v=4" width="100px;" alt=""/><br /><sub><b>Tamara Koliada</b></sub></a><br /><a href="https://github.com/hospitalrun-ua/frontend/commits?author=tomkax" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/babichss"><img src="https://avatars3.githubusercontent.com/u/3343105?s=460&u=ebe2d80d7fdc3bcf156d2ddae9010d91b7e69484&v=4" width="100px;" alt=""/><br /><sub><b>Sergiy Babich</b></sub></a><br /><a href="https://github.com/hospitalrun-ua/frontend/commits?author=babichss" title="Code">💻</a></td>
+<td align="center"><a href="https://github.com/vb-oiko"><img src="https://avatars3.githubusercontent.com/u/43011715?s=460&u=ad60df6df50e7d47ba97c26709508502feb4f342&v=4" width="100px;" alt=""/><br /><sub><b>Vasyl Boyko</b></sub></a><br /><a href="https://github.com/hospitalrun-ua/frontend/commits?author=vb-oiko" title="Code">💻</a></td>
+  </tr>
+</table>
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
