@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Don't know how create a pull request from forked repo? Check out [here](https://docs.github.com/en/enterprise/2.16/user/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork)
 
 # How to contribute?
 
@@ -12,15 +13,22 @@ yarn install
 yarn start
 </code></pre>
 
+# Tasks
+All our open tasks at Github :
+[frontend tasks](https://github.com/orgs/hospitalrun-ua/projects/6) 
+[Backend tasks](https://github.com/orgs/hospitalrun-ua/projects/6) 
+[docs tasks](https://github.com/orgs/hospitalrun-ua/projects/6) 
+
 Go to this [link](https://hospitalrunstaging.eba-yqyr2bp5.eu-west-1.elasticbeanstalk.com/api/resources) - allow access without certification and now you have everything for a start.
 Just start in browser http://localhost:3000/
 
-## General description:
+## General description
 UA: **Project [description](https://pandaid.plexie.com/app/#/public/project/fda3e9c1-cb6c-4083-be94-9b5bb28ad1e2)** 
 ENG: **Project [description](https://pandaid.splashthat.com/)**
 
 **PandAid [Presentation](https://drive.google.com/file/d/12wMkp3OS89HfmiJLtILFSp-eGhG1Kbe4/view)** 
 
+### Don't forget  add your contribution to your cv and [Linkedin profile](https://www.linkedin.com/company/pandaid-ua/about/) ! 
 <hr/>
 
 ## PandAid Dashboard
@@ -108,6 +116,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -129,3 +138,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 </table>
 
 This project follows the all-contributors specification. Contributions of any kind welcome!
+
+## License
+See Reason license in LICENSE.txt .
+
+Works that are forked from other projects are under their original licenses.
+
