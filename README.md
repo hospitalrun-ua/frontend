@@ -13,6 +13,9 @@ yarn install
 yarn start
 </code></pre>
 
+#Tasks
+Github [tasks](https://github.com/orgs/hospitalrun-ua/projects/6) 
+
 Go to this [link](https://hospitalrunstaging.eba-yqyr2bp5.eu-west-1.elasticbeanstalk.com/api/resources) - allow access without certification and now you have everything for a start.
 Just start in browser http://localhost:3000/
 
