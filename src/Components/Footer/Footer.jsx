@@ -10,7 +10,7 @@ import {
   Typography
 } from '@material-ui/core';
 import './Footer.css';
-import { footerLogo, facebookIcon, twitterIcon, linkedInIcon } from '../../assets/icons';
+import { footerLogo, facebookIcon, githubIcon, linkedInIcon } from '../../assets/icons';
 
 const menuItemsMock = [
   {
@@ -116,7 +116,7 @@ export default () => {
               className={classes.socIconsWrapper}
             >
               <a href="#" className={classes.socIcon}>{facebookIcon}</a>
-              <a href="#" className={classes.socIcon}>{twitterIcon}</a>
+              <a href="#" className={classes.socIcon}>{githubIcon}</a>
               <a href="#" className={classes.socIcon}>{linkedInIcon}</a>
             </Grid>
           </Grid>
