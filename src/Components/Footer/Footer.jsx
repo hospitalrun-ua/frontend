@@ -10,7 +10,7 @@ import {
   Typography
 } from '@material-ui/core';
 import './Footer.css';
-import { footerLogo, facebookIcon, twitterIcon, linkedInIcon } from '../../assets/icons';
+import { footerLogo, facebookIcon, twitterIcon,githubIcon, linkedInIcon } from '../../assets/icons';
 
 const menuItemsMock = [
   {
@@ -116,7 +116,7 @@ export default () => {
               className={classes.socIconsWrapper}
             >
               <a href="https://www.facebook.com/PandAid-100100004981155/" className={classes.socIcon}>{facebookIcon}</a>
-              <a href="https://github.com/hospitalrun-ua" className={classes.socIcon}>{twitterIcon}</a>
+              <a href="https://github.com/hospitalrun-ua" className={classes.socIcon}>{githubIcon}</a>
               <a href="https://www.linkedin.com/company/pandaid-ua/" className={classes.socIcon}>{linkedInIcon}</a>
             </Grid>
           </Grid>
