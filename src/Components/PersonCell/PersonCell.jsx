@@ -35,6 +35,7 @@ const PersonCell = ({ person }) => {
       <Grid
         container
         wrap="nowrap"
+        alignItems="center"
         spacing={2}
         aria-owns={open ? 'mouse-over-popover' : undefined}
         aria-haspopup="true"
