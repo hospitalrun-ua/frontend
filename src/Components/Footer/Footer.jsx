@@ -10,7 +10,7 @@ import {
   Typography
 } from '@material-ui/core';
 import './Footer.css';
-import { footerLogo, facebookIcon, twitterIcon,githubIcon, linkedInIcon } from '../../assets/icons';
+import { footerLogo, facebookIcon, twitterIcon, githubIcon, linkedInIcon } from '../../assets/icons';
 
 const menuItemsMock = [
   {
@@ -26,6 +26,21 @@ const menuItemsMock = [
     'children': ['Analytics & Monitoring']
   }
 ]
+
+const documentsLinks = [
+  {
+    head: "Terms of Service",
+    url: "https://static.preply.com/Preply-Terms-of-Service.pdf",
+  },
+  {
+    head: "Privacy Policy",
+    url: "https://static.preply.com/Preply-Terms-of-Service.pdf",
+  },
+  {
+    head: "Copyright (©) 2020",
+    url: "https://static.preply.com/Preply-Terms-of-Service.pdf",
+  },
+];
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "24px",
     width: '100px',
   },
-  socIcon : {
+  socIcon: {
     maxHeight: '21px',
     maxWidth: '20px',
     '& svg': {
@@ -72,7 +87,14 @@ const useStyles = makeStyles((theme) => ({
     '&:first-child': {
       maxHeight: '20px',
     }
-  }
+  },
+  documentLink: {
+    textDecoration: "none",
+    color: "#B9C6E4",
+    "&:hover": {
+      textDecoration: "underline",
+    },
+  },
 }));
 
 export default () => {
@@ -86,7 +108,7 @@ export default () => {
             menuItemsMock.map((section) => (
               <Grid key={section.subhead} item xs={6} md={3}>
                 <Typography variant="h6" className={classes.subheading}>
-                  { section.subhead }
+                  {section.subhead}
                 </Typography>
 
                 <List>
@@ -120,30 +142,29 @@ export default () => {
               <a href="https://www.linkedin.com/company/pandaid-ua/" className={classes.socIcon}>{linkedInIcon}</a>
             </Grid>
           </Grid>
-
-          <Grid
-            className={classes.copyright}
-            container
-            direction="row"
-            justify="space-between"
-            alignItems="flex-start"
-          >
-            <Grid item xs={12} sm={3}>
+        </Grid>
+        <Grid
+          className={classes.copyright}
+          container
+          direction="row"
+          justify="flex-end"
+          alignItems="flex-start"
+          spacing={3}
+        >
+          <Grid item xs={12} sm={3}>
             {footerLogo}
-            </Grid>
-            <Grid item xs={12} sm={3}>
-            Terms of Service
-            </Grid>
-            <Grid item xs={12} sm={3}>
-            Privacy Policy
-            </Grid>
-            <Grid item xs={12} sm={3}>
-
-            Copyright (©) 2020
-
-            </Grid>
           </Grid>
-
+          {documentsLinks.map((link) => (
+            <Grid key={link.head} item item xs={12} sm={3}>
+              <a
+                className={classes.documentLink}
+                href={link.url}
+                target="blank"
+              >
+                {link.head}
+              </a>
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </footer>
