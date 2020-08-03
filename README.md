@@ -141,7 +141,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 This project follows the all-contributors specification. Contributions of any kind welcome!
 
 ## License
-See Reason license in [LICENSE.txt](LICENSE.txt) .
+See PandAid license in [LICENSE.txt](LICENSE.txt) .
 
 Works that are forked from other projects are under their original licenses.
 
