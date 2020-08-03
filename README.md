@@ -1,5 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Don't know how create a pull request from forked repo? Check out [here](https://docs.github.com/en/enterprise/2.16/user/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork)
+Don't know how create a pull request from forked repo? 
+Check out [here](https://docs.github.com/en/enterprise/2.16/user/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork)
 
 # How to contribute?
 
@@ -140,7 +141,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 This project follows the all-contributors specification. Contributions of any kind welcome!
 
 ## License
-See Reason license in LICENSE.txt .
+See Reason license in [LICENSE.txt](LICENSE.txt) .
 
 Works that are forked from other projects are under their original licenses.
 
