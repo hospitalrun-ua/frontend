@@ -7,6 +7,14 @@ export default {
     settlementCol: 'Населений пункт',
     requestsCol: 'Кількість запитів',
   },
+  hospitalTableFilter: {
+    all: 'All',
+    category: 'Категорія',
+    cityRegion: 'Місто/Регіон',
+    deadline: 'Дедлайн',
+    institution: 'Установа',
+    status: 'Статус'
+  },
   header: {
     searchPlaceholder: 'Пошук',
     cityChoice: 'Ваше місто',
