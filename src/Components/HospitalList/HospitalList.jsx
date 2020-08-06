@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import { VolunteerJoin } from '../Modal';
 import PersonCell from '../PersonCell';
+import TableFilter from '../../Components/TableFilter/TableFilter';
 
 const columns = [
   { label: 'Facility', key: '' },
@@ -51,6 +52,7 @@ const HospitalList = () => {
 
   return (
     <Paper elevation={2}>
+      <TableFilter />
       <Table>
         <TableHead>
           <TableRow>
