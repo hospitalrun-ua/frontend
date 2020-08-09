@@ -27,5 +27,10 @@ export default {
       organization: 'Заявка для організацій',
       volunteer: 'Заявка для волонтерів'
     }
+  },
+  mapPopup: {
+    cases: 'Захворіло',
+    recovered: 'Одужало',
+    deaths: "Померло"
   }
 };
