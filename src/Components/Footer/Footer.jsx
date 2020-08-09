@@ -30,15 +30,16 @@ const menuItemsMock = [
 const documentsLinks = [
   {
     head: "Terms of Service",
-    url: "https://static.preply.com/Preply-Terms-of-Service.pdf",
+    url: "https://docs.google.com/document/d/1NJdehnlP19xuT4PifhyasyNC5toLPCmVB2-VZy_Q0WA/edit?usp=sharing",
+    //url: "https://static.preply.com/Preply-Terms-of-Service.pdf",
   },
   {
     head: "Privacy Policy",
-    url: "https://static.preply.com/Preply-Terms-of-Service.pdf",
+    url: "https://docs.google.com/document/d/1N5qCL9Pug6OQpCiZzNIfCwfsl7PmDNXoeiddA4HcBAM/edit?usp=sharing",
   },
   {
     head: "Copyright (©) 2020",
-    url: "https://static.preply.com/Preply-Terms-of-Service.pdf",
+  //  url: "https://static.preply.com/Preply-Terms-of-Service.pdf",
   },
 ];
 
