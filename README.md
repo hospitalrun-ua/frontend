@@ -34,7 +34,7 @@ ENG: **Project [description](https://pandaid.splashthat.com/)**
 
 ## PandAid Dashboard
 
-<img width="1212" alt="PandAid - main " src="https://user-images.githubusercontent.com/8326985/88194450-88e9f600-cc47-11ea-904c-cddb3e6d953d.png">
+<img width="1367" alt="Screen Shot 2020-08-12 at 4 35 39 PM" src="https://user-images.githubusercontent.com/8326985/90027169-e7dbe180-dcc0-11ea-8ee5-3a6e2c9c9aa3.png">
 
 <hr/>
 
