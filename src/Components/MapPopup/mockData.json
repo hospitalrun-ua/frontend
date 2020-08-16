@@ -1,0 +1,31 @@
+{
+    "region": {
+        "id": 1,
+        "title": "kyivcity",
+        "cases": 13,
+        "recovered": 8,
+        "deaths": 1
+    },
+    "needs": [
+        {
+            "id": 1,
+            "type": "Tests",
+            "count": 2500
+        },
+        {
+            "id": 2,
+            "type": "Equipment",
+            "count": 198
+        },
+        {
+            "id": 3,
+            "type": "Pills",
+            "count": 10345
+        },
+        {
+            "id": 4,
+            "type": "Other",
+            "count": 27
+        }
+    ]
+}

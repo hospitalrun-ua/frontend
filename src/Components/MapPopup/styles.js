@@ -16,18 +16,44 @@ export const useMapPopupStyles = makeStyles((theme) => ({
     margin: theme.spacing(1.75, 0),
     backgroundColor: '#EBEFF2'
   },
-  listItem: {
+  casesListItem: {
     color: '#192A3E',
     padding: 0
   },
-  listItemText: {
+  casesListItemText: {
     fontWeight: 600,
     fontSize: theme.spacing(1.25),
     lineHeight: '12px',
   },
-  listItemTextCount: {
+  casesListItemTextCount: {
     textAlign: 'right',
     fontSize: theme.spacing(1.25),
     lineHeight: '12px',
   },
+  medicineList: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    columnGap: theme.spacing(1.5),
+    '& li': {
+      padding: 0,
+    }
+  },
+  listItemIcon: {
+    flexShrink: 0,
+    width: '24px',
+    height: '24px',
+    marginRight: theme.spacing(1),
+    borderRadius: '50%',
+    backgroundColor: '#109CF1',
+  }
 }));
+
+export const primaryTypographyStyle = {
+  fontSize: '10px',
+  color: '#192A3E'
+};
+
+export const secondaryTypographyStyle = {
+  fontSize: '10px',
+  color: '#109CF1'
+};
