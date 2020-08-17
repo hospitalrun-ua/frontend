@@ -5,13 +5,11 @@ import './CityChoice.css';
 
 const { cityChoice } = i18n.header;
 
-const CityChoice = () => {
-  return (
-    <div className="cityChoiceWrap">
-      {markerIcon}
-      <span className="cityChoiceTitle">{cityChoice}</span>
-    </div>
-  )
-};
+const CityChoice = () => (
+  <div className="cityChoiceWrap">
+    {markerIcon}
+    <span className="cityChoiceTitle">{cityChoice}</span>
+  </div>
+);
 
 export default CityChoice;
