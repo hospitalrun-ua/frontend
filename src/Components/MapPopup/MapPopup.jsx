@@ -7,9 +7,9 @@ import i18n from '../../i18n';
 
 import mockData from './mockData.json';
 
-const { mapPopup, regions, medicine } = i18n;
+const { mapPopup, medicine } = i18n;
 
-const MapPopup = memo(({ anchorEl, handleClose, elevation, ...popupProps }) => {
+const MapPopup = memo(({ anchorEl, regionName, handleClose, elevation, ...popupProps }) => {
   const classes = useMapPopupStyles();
   const { region, needs } = mockData;
 
@@ -19,10 +19,10 @@ const MapPopup = memo(({ anchorEl, handleClose, elevation, ...popupProps }) => {
     <Popover
       className={classes.root}
       anchorEl={anchorEl}
-      open={Boolean(anchorEl)}
+      open={!!anchorEl}
       getContentAnchorEl={null}
       onClose={handleClose}
-      elevation='0'
+      elevation={0}
       anchorOrigin={{
         vertical: 'center',
         horizontal: 'center',
@@ -35,32 +35,32 @@ const MapPopup = memo(({ anchorEl, handleClose, elevation, ...popupProps }) => {
     >
       <Box display='flex' flexDirection='column' p={2}>
         <Box display='flex' justifyContent='space-between' minWidth='200px' >
-          <Typography className={classes.heading}>{regions[region?.title.toLowerCase()]}</Typography>
+          <Typography className={classes.heading}>{regionName || '-'}</Typography>
           <Box ml={2}>
-            <Typography className={classes.heading}>{region?.cases}</Typography>
+            <Typography className={classes.heading}>{region?.cases || '-'}</Typography>
           </Box>
         </Box>
         <Box display='flex' height='34px' width='100%' py={1.75}>
-          <Box height='6px' width={`calc(${calculateProgressBarWidth(region.cases, region.recovered, region.deaths)})`} mr={0.75} borderRadius={18} bgcolor='#FEAA53' />
-          <Box height='6px' width={`calc(${calculateProgressBarWidth(region.recovered, region.cases, region.deaths)})`} mr={0.75} borderRadius={18} bgcolor='#2ED47A' />
-          <Box height='6px' width={`calc(${calculateProgressBarWidth(region.deaths, region.cases, region.recovered)})`} borderRadius={18} bgcolor='#707683' />
+          <Box height='6px' width={`calc(${calculateProgressBarWidth(region?.cases, region?.recovered, region?.deaths)})`} mr={0.75} borderRadius={18} bgcolor='#FEAA53' />
+          <Box height='6px' width={`calc(${calculateProgressBarWidth(region?.recovered, region?.cases, region?.deaths)})`} mr={0.75} borderRadius={18} bgcolor='#2ED47A' />
+          <Box height='6px' width={`calc(${calculateProgressBarWidth(region?.deaths, region?.cases, region?.recovered)})`} borderRadius={18} bgcolor='#707683' />
         </Box>
         <Box>
           <List disablePadding>
             <ListItem disableGutters className={classes.casesListItem}>
               <Box height='8px' width='8px' mr={1} borderRadius='50%' bgcolor='#FEAA53' />
               <ListItemText disableTypography className={classes.casesListItemText}>{mapPopup.cases}</ListItemText>
-              <ListItemText disableTypography className={classes.casesListItemTextCount}>{region.cases || '-'}</ListItemText>
+              <ListItemText disableTypography className={classes.casesListItemTextCount}>{region?.cases || '-'}</ListItemText>
             </ListItem>
             <ListItem disableGutters className={classes.casesListItem}>
               <Box height='8px' width='8px' mr={1} borderRadius='50%' bgcolor='#2ED47A' />
               <ListItemText disableTypography className={classes.casesListItemText}>{mapPopup.recovered}</ListItemText>
-              <ListItemText disableTypography className={classes.casesListItemTextCount}>{region.recovered || '-'}</ListItemText>
+              <ListItemText disableTypography className={classes.casesListItemTextCount}>{region?.recovered || '-'}</ListItemText>
             </ListItem>
             <ListItem disableGutters className={classes.casesListItem}>
               <Box height='8px' width='8px' mr={1} borderRadius='50%' bgcolor='#707683' />
               <ListItemText disableTypography className={classes.casesListItemText}>{mapPopup.deaths}</ListItemText>
-              <ListItemText disableTypography className={classes.casesListItemTextCount}>{region.deaths || '-'}</ListItemText>
+              <ListItemText disableTypography className={classes.casesListItemTextCount}>{region?.deaths || '-'}</ListItemText>
             </ListItem>
           </List>
         </Box>
@@ -88,6 +88,7 @@ const MapPopup = memo(({ anchorEl, handleClose, elevation, ...popupProps }) => {
 
 MapPopup.propTypes = {
   anchorEl: PropTypes.oneOfType(PropTypes.bool, PropTypes.object),
+  regionName: PropTypes.string,
   region: PropTypes.shape({
     id: PropTypes.number,
     title: PropTypes.string,
@@ -100,15 +101,16 @@ MapPopup.propTypes = {
 
 MapPopup.defaultProps = {
   anchorEl: null,
+  regionName: '',
   handleClose: () => { },
-  region: {
+  regionInfo: {
     id: 0,
     title: '',
     cases: null,
     recovered: null,
     deaths: null
   },
-  needs: []
+  regionNeeds: []
 };
 
 export default MapPopup;
