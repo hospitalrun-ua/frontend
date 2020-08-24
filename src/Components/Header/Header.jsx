@@ -40,26 +40,26 @@ const Header = ({ ...props }) => {
           </form>
           {!isAuthenticated
             && (
-            <>
-              <CityChoice />
+              <>
+                <CityChoice />
 
-              <JoinDropdown toggleVolunteerModal={toggleVolunteerModal} toggleOrganizationModal={toggleOrganizationModal} />
-              <LanguageSelector />
+                <JoinDropdown toggleVolunteerModal={toggleVolunteerModal} toggleOrganizationModal={toggleOrganizationModal} />
+                <LanguageSelector />
 
-              <NavLink variant="contained" component={Button} to="/admin/dashboard" color="primary">Cabinet</NavLink>
+                <NavLink variant="contained" component={Button} to="/admin/dashboard" color="primary">Cabinet</NavLink>
 
-              <OrganizationJoin
-                open={showOrganizationModal}
-                id={0}
-                onClose={toggleOrganizationModal}
-              />
-              <VolunteerJoin
-                open={showVolunteerModal}
-                id={1}
-                onClose={toggleVolunteerModal}
-              />
-              {/* <Login /> */}
-            </>
+                <OrganizationJoin
+                  open={showOrganizationModal}
+                  id={0}
+                  onClose={toggleOrganizationModal}
+                />
+                <VolunteerJoin
+                  open={showVolunteerModal}
+                  id={1}
+                  onClose={toggleVolunteerModal}
+                />
+                {/* <Login /> */}
+              </>
             )}
         </Grid>
       </Container>

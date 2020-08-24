@@ -35,5 +35,46 @@ export default {
       organization: 'Заявка для організацій',
       volunteer: 'Заявка для волонтерів'
     }
+  },
+  mapPopup: {
+    cases: 'Захворіло',
+    recovered: 'Одужало',
+    deaths: "Померло"
+  },
+  medicine: {
+    tests: 'Тести',
+    masks: 'Маски',
+    equipment: 'Обладнання',
+    pills: 'Медикаменти',
+    other: 'Інше',
+  },
+  regions: {
+    vinnytsia: "Вінницька обл",
+    volyn: "Волинська обл",
+    luhansk: "Луганська обл",
+    dnipro: "Дніпровська обл",
+    donetsk: "Донецька обл",
+    zhytomyr: "Житомирська обл",
+    zakarpattia: "Закарпатська обл",
+    zaporizhzhya: "Запорізька обл",
+    ivanofrankivsk: "Івано-Франківська обл",
+    kyivcity: "Київ",
+    kyiv: "Київська обл",
+    kropyvnytskyi: "Кропивницька обл",
+    sevastopol: "Севастополь",
+    crimea: "АР Крим",
+    lviv: "Львівська обл",
+    mykolaiv: "Миколаївська обл",
+    odesa: "Одеська обл",
+    poltava: "Полтавська обл",
+    rivne: "Рівненська обл",
+    sumy: "Сумська обл",
+    ternopil: "Тернопільська обл",
+    kharkiv: "Харківська обл",
+    kherson: "Херсонська обл",
+    khmelnytskyi: "Хмельницька обл",
+    cherkasy: "Черкаська обл",
+    chernihiv: "Чернігівська обл",
+    chernivtsi: "Чернівецька обл"
   }
 };
